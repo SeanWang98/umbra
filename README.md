@@ -122,10 +122,11 @@ The `ThemeProvider` is set up in `src/app/core.cljs` — wrap your root componen
 
 ## Using as a Template
 
-Click **"Use this template"** on GitHub, or:
+Click **"Use this template"** on GitHub, or scaffold locally with [degit](https://github.com/Rich-Harris/degit):
 
 ```bash
-gh repo create my-app --template SeanWang98/umbra --public --clone
+bun add -g degit
+degit SeanWang98/umbra my-app
 cd my-app
 bun install
 ```
