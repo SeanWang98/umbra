@@ -1,0 +1,36 @@
+# Build artifacts
+*.jar
+*.class
+pom.xml
+pom.xml.asc
+/lib/
+/classes/
+/target/
+/dist
+
+# Leiningen
+.lein-deps-sum
+.lein-repl-history
+.lein-plugins/
+.lein-failures
+/checkouts/
+
+# Clojure / ClojureScript
+.cpcache/
+.nrepl-port
+.shadow-cljs/
+.clj-kondo/.cache
+.clj-kondo/imports
+
+# Node.js
+node_modules/
+
+# IDE / Editor
+.idea
+*.iml
+.lsp/
+.calva/
+.claude/
+
+# OS
+.DS_Store

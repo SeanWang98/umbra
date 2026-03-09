@@ -1,0 +1,10 @@
+{:deps {org.clojure/clojure {:mvn/version "1.12.4"}
+        org.clojure/clojurescript {:mvn/version "1.12.134"}
+        com.pitch/uix.core {:mvn/version "1.4.9"}
+        com.pitch/uix.dom {:mvn/version "1.4.9"}}
+ :paths ["src"]
+ :aliases {:dev {:extra-deps {thheller/shadow-cljs {:mvn/version "3.3.6"}
+                              binaryage/devtools {:mvn/version "1.0.7"}}}
+
+           :outdated {:deps {com.github.liquidz/antq {:mvn/version "RELEASE"}}
+                      :main-opts ["-m" "antq.core"]}}}

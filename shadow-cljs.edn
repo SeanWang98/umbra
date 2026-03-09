@@ -1,0 +1,15 @@
+{:deps true
+ ;; :dev-http {8080 "public"}
+ :builds {:app
+          {:target :esm
+           :modules {:main {:entries [app.core]
+                            :init-fn app.core/init}}
+           :devtools {:preloads [uix.preload devtools.preload]}
+           :js-options {:output-feature-set :es-unsupported
+                        :language-in :unsupported
+                        :js-provider :external
+                        :external-index-format :esm}
+           :dev {:output-dir "target/dev"
+                 :js-options {:external-index "target/dev/external.js"}}
+           :release {:output-dir "target/release"
+                     :js-options {:external-index "target/release/external.js"}}}}}
