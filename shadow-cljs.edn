@@ -1,5 +1,5 @@
 {:deps true
- ;; :dev-http {8080 "public"}
+ :nrepl {:middleware [cider.nrepl/cider-middleware]}
  :builds {:app
           {:target :esm
            :modules {:main {:entries [app.core]

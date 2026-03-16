@@ -4,7 +4,9 @@
         com.pitch/uix.dom {:mvn/version "1.4.9"}}
  :paths ["src"]
  :aliases {:dev {:extra-deps {thheller/shadow-cljs {:mvn/version "3.3.6"}
-                              binaryage/devtools {:mvn/version "1.0.7"}}}
+                              binaryage/devtools {:mvn/version "1.0.7"}
+                              nrepl/nrepl {:mvn/version "1.5.1"}
+                              cider/cider-nrepl {:mvn/version "0.58.0"}}}
 
            :outdated {:deps {com.github.liquidz/antq {:mvn/version "RELEASE"}}
                       :main-opts ["-m" "antq.core"]}}}
