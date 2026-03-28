@@ -18,6 +18,7 @@ export default function cljsHmrGuard() {
 
   return {
     name: 'cljs-hmr-guard',
+    apply: 'serve',
 
     transform(code, id) {
       if (!id.includes('/target/dev/') || !id.endsWith('external.js')) return
@@ -106,7 +107,10 @@ globalThis.__shadow$lazyProxy = function(depName) {
           return []
         }
         lastExternalContent = content
-        return // content changed — let Vite HMR handle (self-accepting)
+        // New imports added — force full-reload so all modules are eager.
+        // HMR self-accept can't guarantee CLJS shims see real modules
+        // (race: shadow-cljs runs before Vite processes updated external.js).
+        return [{ type: 'full-reload', path: file }]
       }
 
       // Other target/dev/ files: shadow-cljs handles HMR, suppress Vite's

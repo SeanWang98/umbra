@@ -4,12 +4,14 @@
           {:target :esm
            :modules {:main {:entries [app.core]
                             :init-fn app.core/init}}
-           :devtools {:preloads [uix.preload devtools.preload]}
+           :devtools {:preloads [uix.preload devtools.preload
+                                 day8.re-frame-10x.preload.react-18]}
            :js-options {:output-feature-set :es-unsupported
                         :language-in :unsupported
                         :js-provider :external
                         :external-index-format :esm}
            :dev {:output-dir "target/dev"
-                 :js-options {:external-index "target/dev/external.js"}}
+                 :js-options {:external-index "target/dev/external.js"}
+                 :compiler-options {:closure-defines {re-frame.trace.trace-enabled? true}}}
            :release {:output-dir "target/release"
                      :js-options {:external-index "target/release/external.js"}}}}}
